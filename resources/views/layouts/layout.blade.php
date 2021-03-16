@@ -4,18 +4,7 @@
 
 @include('layouts.partials.header')
 
-@include('layouts.partials.discount')
 
-@include('layouts.partials.welcome-slides')
-
-@include('layouts.partials.top-category')
-
-@include('layouts.partials.quick-modal')
-
-@include('layouts.partials.categories-by-gender')
-
-@include('layouts.partials.ofer')
-
-@include('layouts.partials.popular-brands')
+@yield('content')
 
 @include('layouts.partials.footer')

@@ -15,6 +15,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'MainController@index')->name('index');
 
+Route::get('/product-details', function () {
+    return view('product-details');
+});
+
+Route::get('/products', function (){
+    return view('products');
+});
+
+Route::get('/cart', function (){
+    return view('cart');
+});
+
+Route::get('/checkout', function () {
+    return view('checkout');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

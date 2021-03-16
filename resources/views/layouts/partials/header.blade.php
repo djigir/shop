@@ -1,7 +1,7 @@
 <div id="wrapper">
 
 <!-- ****** Header Area Start ****** -->
-<header class="header_area">
+<header class="header_area bg-img background-overlay-white">
     <!-- Top Header Area Start -->
     <div class="top_header_area">
         <div class="container h-100">
@@ -11,35 +11,29 @@
                     <div class="top_single_area d-flex align-items-center">
                         <!-- Logo Area -->
                         <div class="top_logo">
-                            <a href="#"><img src="img/core-img/logo.png" alt=""></a>
+                            <a href="/"><img src="img/core-img/logo.png" alt=""></a>
                         </div>
                         <!-- Cart & Menu Area -->
                         <div class="header-cart-menu d-flex align-items-center ml-auto">
                             <!-- Cart Area -->
                             <div class="cart">
-                                <a href="#" id="header-cart-btn" target="_blank"><span class="cart_quantity">2</span> <i class="ti-bag"></i> Your Bag $20</a>
+                                <a href="#" id="header-cart-btn" target="_blank"><span class="cart_quantity">2</span> <i class="ti-bag"></i> Всего $200000</a>
                                 <!-- Cart List Area Start -->
                                 <ul class="cart-list">
+
                                     <li>
                                         <a href="#" class="image"><img src="img/product-img/product-10.jpg" class="cart-thumb" alt=""></a>
                                         <div class="cart-item-desc">
-                                            <h6><a href="#">Women's Fashion</a></h6>
-                                            <p>1x - <span class="price">$10</span></p>
+                                            <h6><a href="#">{{ 'название с ссылкой' }}</a></h6>
+                                            <p>{{ 'количество' }} x - <span class="price">{{ 'цена 10 грн' }}</span></p>
                                         </div>
                                         <span class="dropdown-product-remove"><i class="icon-cross"></i></span>
                                     </li>
-                                    <li>
-                                        <a href="#" class="image"><img src="img/product-img/product-11.jpg" class="cart-thumb" alt=""></a>
-                                        <div class="cart-item-desc">
-                                            <h6><a href="#">Women's Fashion</a></h6>
-                                            <p>1x - <span class="price">$10</span></p>
-                                        </div>
-                                        <span class="dropdown-product-remove"><i class="icon-cross"></i></span>
-                                    </li>
+
                                     <li class="total">
-                                        <span class="pull-right">Total: $20.00</span>
-                                        <a href="cart.html" class="btn btn-sm btn-cart">Cart</a>
-                                        <a href="https://technext.github.io/karl/checkout-1.html" class="btn btn-sm btn-checkout">Checkout</a>
+                                        <span class="pull-right">Всего: {{ '$200' }}</span>
+                                        <a href="{{ url('/cart')  }}" class="btn btn-sm btn-cart">Корзина</a>
+                                        <a href="{{ url('/checkout')  }}" class="btn btn-sm btn-checkout">Оплатить</a>
                                     </li>
                                 </ul>
                             </div>
@@ -61,7 +55,6 @@
                 <div class="col-12 d-md-flex justify-content-between">
                     <!-- Header Social Area -->
                     <div class="header-social-area">
-                        <a href="#"><span class="karl-level">Share</span> <i class="fa fa-pinterest" aria-hidden="true"></i></a>
                         <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                         <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                         <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
@@ -74,20 +67,20 @@
 
                             <div class="collapse navbar-collapse align-items-start collapse" id="karl-navbar">
                                 <ul class="navbar-nav animated" id="nav">
-                                    <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                                    <li class="nav-item active"><a class="nav-link" href="#">Главная</a></li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" id="karlDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                                        <a class="nav-link dropdown-toggle" href="#" id="karlDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Навигация</a>
                                         <div class="dropdown-menu" aria-labelledby="karlDropdown">
-                                            <a class="dropdown-item" href="index.html">Home</a>
-                                            <a class="dropdown-item" href="shop.html">Shop</a>
-                                            <a class="dropdown-item" href="product-details.html">Product Details</a>
-                                            <a class="dropdown-item" href="cart.html">Cart</a>
-                                            <a class="dropdown-item" href="checkout.html">Checkout</a>
+                                            <a class="dropdown-item" href="#">Home</a>
+                                            <a class="dropdown-item" href="#">Shop</a>
+                                            <a class="dropdown-item" href="#">Product Details</a>
+                                            <a class="dropdown-item" href="#">Cart</a>
+                                            <a class="dropdown-item" href="#">Checkout</a>
                                         </div>
                                     </li>
                                     <li class="nav-item"><a class="nav-link" href="#">Dresses</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#"><span class="karl-level">топ</span> Shoes</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#"><span class="karl-level">топ</span> Контакты</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Корзина</a></li>
                                 </ul>
                             </div>
                         </nav>

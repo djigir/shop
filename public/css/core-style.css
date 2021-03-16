@@ -374,6 +374,23 @@ img {
 :: 5.0 Header Area CSS
 ------------------------ */
 
+.header_area {
+    background-image: url('../img/bg-img/bg-1.jpg');
+}
+
+.bg-img {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.background-overlay-white {
+    position: relative;
+    z-index: 2;
+    background-position: center center;
+    background-size: cover;
+}
+
 .top_header_area {
     height: 150px;
     width: 100%;

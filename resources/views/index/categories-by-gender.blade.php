@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section_heading text-center">
-                    <h2>New Arrivals</h2>
+                    <h2>Категории</h2>
                 </div>
             </div>
         </div>

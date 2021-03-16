@@ -2,8 +2,18 @@
 
 @section('content')
 
-    <div class="container">
-        <p>Mian</p>
-    </div>
+    @include('index.search')
+
+    @include('index.welcome-slides')
+
+    @include('index.top-category')
+
+    @include('index.quick-modal')
+
+    @include('index.categories-by-gender')
+
+    @include('index.offer')
+
+    @include('index.popular-brands')
 
 @endsection
