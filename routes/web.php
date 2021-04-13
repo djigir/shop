@@ -19,9 +19,7 @@ Route::get('/product-details', function () {
     return view('product-details');
 });
 
-Route::get('/products', function (){
-    return view('products');
-});
+Route::get('/products', 'ProductController@index')->name('products');
 
 Route::get('/cart', function (){
     return view('cart');
@@ -32,5 +30,10 @@ Route::get('/checkout', function () {
 });
 
 Auth::routes();
+
+/* service routes */
+Route::get('/parse', 'ParseController@index')->name('parse');
+Route::post('/parse_file', 'ParseController@parseFile')->name('parse_file');
+
 
 Route::get('/home', 'HomeController@index')->name('home');

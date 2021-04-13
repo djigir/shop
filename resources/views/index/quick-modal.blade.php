@@ -12,7 +12,7 @@
                         <div class="row">
                             <div class="col-12 col-lg-5">
                                 <div class="quickview_pro_img">
-                                    <img src="img/product-img/product-1.jpg" alt="">
+                                    <img src={{ asset('img/products/pr1.webp') }} alt="">
                                 </div>
                             </div>
                             <div class="col-12 col-lg-7">

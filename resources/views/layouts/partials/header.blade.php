@@ -17,7 +17,7 @@
                         <div class="header-cart-menu d-flex align-items-center ml-auto">
                             <!-- Cart Area -->
                             <div class="cart">
-                                <a href="#" id="header-cart-btn" target="_blank"><span class="cart_quantity">2</span> <i class="ti-bag"></i> Всего $200000</a>
+                                <a href="#" id="header-cart-btn" target="_blank"><span class="cart_quantity">{{ '1' }}</span> <i class="ti-bag"></i> Всего $200000</a>
                                 <!-- Cart List Area Start -->
                                 <ul class="cart-list">
 
@@ -78,8 +78,8 @@
                                             <a class="dropdown-item" href="#">Checkout</a>
                                         </div>
                                     </li>
-                                    <li class="nav-item"><a class="nav-link" href="#">Dresses</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#"><span class="karl-level">топ</span> Контакты</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{ route('products') }}" style="text-decoration: underline">Товары</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">{{--<span class="karl-level">топ</span>--}} Контакты</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#">Корзина</a></li>
                                 </ul>
                             </div>
