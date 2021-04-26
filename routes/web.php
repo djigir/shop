@@ -29,11 +29,19 @@ Route::get('/checkout', function () {
     return view('checkout');
 });
 
+/* profile routes */
+Route::prefix('profile')
+    ->name('profile.')
+    ->group(function () {
+        Route::get('/settings', 'ProfileController@settings')->name('settings');
+    });
+Route::post('/edit-login-pass', 'ProfileController@editLoginAndPass')->name('edit-login-pass');
+
 Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
 
 /* service routes */
 Route::get('/parse', 'ParseController@index')->name('parse');
 Route::post('/parse_file', 'ParseController@parseFile')->name('parse_file');
 
 
-Route::get('/home', 'HomeController@index')->name('home');

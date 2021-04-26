@@ -34,6 +34,12 @@
 |        |          |                               |                       |                                                                        | Illuminate\View\Middleware\ShareErrorsFromSession       |
 |        |          |                               |                       |                                                                        | App\Http\Middleware\VerifyCsrfToken                     |
 |        |          |                               |                       |                                                                        | Illuminate\Routing\Middleware\SubstituteBindings        |
+|        | POST     | edit-login-pass               | edit-login-pass       | App\Http\Controllers\ProfileController@editLoginAndPass                | App\Http\Middleware\EncryptCookies                      |
+|        |          |                               |                       |                                                                        | Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse |
+|        |          |                               |                       |                                                                        | Illuminate\Session\Middleware\StartSession              |
+|        |          |                               |                       |                                                                        | Illuminate\View\Middleware\ShareErrorsFromSession       |
+|        |          |                               |                       |                                                                        | App\Http\Middleware\VerifyCsrfToken                     |
+|        |          |                               |                       |                                                                        | Illuminate\Routing\Middleware\SubstituteBindings        |
 |        | GET|HEAD | home                          | home                  | App\Http\Controllers\HomeController@index                              | App\Http\Middleware\EncryptCookies                      |
 |        |          |                               |                       |                                                                        | Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse |
 |        |          |                               |                       |                                                                        | Illuminate\Session\Middleware\StartSession              |
@@ -117,7 +123,13 @@
 |        |          |                               |                       |                                                                        | Illuminate\View\Middleware\ShareErrorsFromSession       |
 |        |          |                               |                       |                                                                        | App\Http\Middleware\VerifyCsrfToken                     |
 |        |          |                               |                       |                                                                        | Illuminate\Routing\Middleware\SubstituteBindings        |
-|        | GET|HEAD | products                      |                       | Closure                                                                | App\Http\Middleware\EncryptCookies                      |
+|        | GET|HEAD | products                      | products              | App\Http\Controllers\ProductController@index                           | App\Http\Middleware\EncryptCookies                      |
+|        |          |                               |                       |                                                                        | Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse |
+|        |          |                               |                       |                                                                        | Illuminate\Session\Middleware\StartSession              |
+|        |          |                               |                       |                                                                        | Illuminate\View\Middleware\ShareErrorsFromSession       |
+|        |          |                               |                       |                                                                        | App\Http\Middleware\VerifyCsrfToken                     |
+|        |          |                               |                       |                                                                        | Illuminate\Routing\Middleware\SubstituteBindings        |
+|        | GET|HEAD | profile/settings              | profile.settings      | App\Http\Controllers\ProfileController@se                              | App\Http\Middleware\EncryptCookies                      |
 |        |          |                               |                       |                                                                        | Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse |
 |        |          |                               |                       |                                                                        | Illuminate\Session\Middleware\StartSession              |
 |        |          |                               |                       |                                                                        | Illuminate\View\Middleware\ShareErrorsFromSession       |

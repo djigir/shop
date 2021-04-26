@@ -1,0 +1,116 @@
+/* for login and register forms */
+.custom_auth {
+    margin: 4rem 0;
+}
+
+.custom_auth .form-group {
+    margin: 2rem 0;
+}
+
+.custom_auth form {
+    padding: 1rem 2rem;
+    border: 2px solid #ff084e;
+    border-radius: 30px 30px 30px 30px;
+    -moz-border-radius: 30px 30px 30px 30px;
+    -webkit-border-radius: 30px 30px 30px 30px;
+}
+
+.custom_auth button {
+    margin-bottom: 2rem;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#forget-password {
+    text-align: center;
+}
+
+#forget-password a{
+    color: #ff084e;
+    text-decoration: underline;
+}
+
+.registration-offer {
+    text-align: center;
+}
+
+.custom_auth h2 {
+    text-align: center;
+}
+
+.social-section {
+    text-align: center;
+}
+
+ul.social-network {
+    list-style: none;
+    display: inline;
+    margin-left: 0 !important;
+    padding: 0
+}
+
+ul.social-network li {
+    display: inline;
+    margin: 0 5px
+}
+
+.social-network a.icoFacebook:hover {
+    background-color: #3B5998
+}
+
+.social-network a.icoTwitter:hover {
+    background-color: #33ccff
+}
+
+.social-network a.icoGoogle:hover {
+    background-color: #BD3518
+}
+
+.social-network a.icoFacebook:hover i,
+.social-network a.icoTwitter:hover i,
+.social-network a.icoGoogle:hover i {
+    color: black;
+}
+
+a.socialIcon:hover,
+.socialHoverClass {
+    color: #44BCDD
+}
+
+.social-circle li a {
+    display: inline-block;
+    position: relative;
+    margin: 0 auto 0 auto;
+    border-radius: 50%;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    font-size: 20px
+}
+
+.social-circle li i {
+    margin: 0;
+    line-height: 50px;
+    text-align: center
+}
+
+.social-circle li a:hover i,
+.triggeredHover {
+    transform: rotate(360deg);
+    transition: all 0.2s
+}
+
+.social-circle i {
+    color: black;
+    transition: all 0.8s;
+}
+/* for tabs in user profile */
+
+.profile-setting-section button {
+    margin-bottom: 2rem;
+}
+
+.card-text {
+    margin-bottom: 2rem;
+}

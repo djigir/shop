@@ -84,7 +84,8 @@
 <script src="{{ asset('js/plugins.js') }}"></script>
 <!-- Active js -->
 <script src="{{ asset('js/active.js') }}"></script>
-
+{{-- Profile js --}}
+<script src="{{ asset('js/profile.js') }}"></script>
 </body>
 
 </html>

@@ -6,7 +6,7 @@
 
     @include('index.quick-modal')
 
-    <section class="shop_grid_area section_padding_100">
+    <section class="shop_grid_area section_padding_10"> {{-- section_padding_100 --}}
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-4 col-lg-3">

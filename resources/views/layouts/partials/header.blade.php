@@ -11,7 +11,7 @@
                     <div class="top_single_area d-flex align-items-center">
                         <!-- Logo Area -->
                         <div class="top_logo">
-                            <a href="/"><img src="img/core-img/logo.png" alt=""></a>
+                            <a href="{{ route('index') }}"><img src="{{ asset('img/core-img/logo.png') }}" alt="logo"></a>
                         </div>
                         <!-- Cart & Menu Area -->
                         <div class="header-cart-menu d-flex align-items-center ml-auto">
@@ -67,7 +67,7 @@
 
                             <div class="collapse navbar-collapse align-items-start collapse" id="karl-navbar">
                                 <ul class="navbar-nav animated" id="nav">
-                                    <li class="nav-item active"><a class="nav-link" href="#">Главная</a></li>
+                                    <li class="nav-item active"><a class="nav-link" href="{{ route('index') }}">Главная</a></li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" id="karlDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Навигация</a>
                                         <div class="dropdown-menu" aria-labelledby="karlDropdown">
@@ -81,7 +81,27 @@
                                     <li class="nav-item"><a class="nav-link" href="{{ route('products') }}" style="text-decoration: underline">Товары</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#">{{--<span class="karl-level">топ</span>--}} Контакты</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#">Корзина</a></li>
+                                    @guest()
+                                        <li class="nav-item"><a class="nav-link add-to-cart-btn_custom" href="{{ route('login') }}">Мой профиль</a></li>
+                                    @endguest
+                                    @auth()
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link add-to-cart-btn_custom dropdown-toggle" href="{{ route('login') }}" id="auth" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Мой профиль</a>
+                                            <div class="dropdown-menu" aria-labelledby="auth">
+                                                <a class="dropdown-item" href="{{ route('home') }}">Профиль</a>
+                                                <a class="dropdown-item" href="{{ route('profile.settings') }}">Настройки</a>
+                                                <hr>
+                                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">Выйти</a>
+                                            </div>
+                                        </li>
+                                    @endauth
                                 </ul>
+                                {{-- form for logout  --}}
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+
                             </div>
                         </nav>
                     </div>
