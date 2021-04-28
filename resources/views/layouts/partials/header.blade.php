@@ -22,7 +22,7 @@
                                 <ul class="cart-list">
 
                                     <li>
-                                        <a href="#" class="image"><img src="img/product-img/product-10.jpg" class="cart-thumb" alt=""></a>
+                                        <a href="#" class="image"><img src="{{ asset('img/product-img/product-10.jpg') }}" class="cart-thumb" alt=""></a>
                                         <div class="cart-item-desc">
                                             <h6><a href="#">{{ 'название с ссылкой' }}</a></h6>
                                             <p>{{ 'количество' }} x - <span class="price">{{ 'цена 10 грн' }}</span></p>

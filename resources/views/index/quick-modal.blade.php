@@ -1,4 +1,5 @@
 <!-- ****** Quick View Modal Area Start ****** -->
+@php $product = \App\Models\Product::find($product_id) @endphp
 <div class="modal fade" id="quickview" tabindex="-1" role="dialog" aria-labelledby="quickview" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -12,12 +13,12 @@
                         <div class="row">
                             <div class="col-12 col-lg-5">
                                 <div class="quickview_pro_img">
-                                    <img src={{ asset('img/products/pr1.webp') }} alt="">
+                                    <img src={{ $product->img }} alt="">
                                 </div>
                             </div>
                             <div class="col-12 col-lg-7">
                                 <div class="quickview_pro_des">
-                                    <h4 class="title">Boutique Silk Dress</h4>
+                                    <h4 class="title">{{ $product->title }}</h4>
                                     <div class="top_seller_product_rating mb-15">
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                         <i class="fa fa-star" aria-hidden="true"></i>
@@ -25,9 +26,9 @@
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                     </div>
-                                    <h5 class="price">$120.99 <span>$130</span></h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia expedita quibusdam aspernatur, sapiente consectetur accusantium perspiciatis praesentium eligendi, in fugiat?</p>
-                                    <a href="#">View Full Product Details</a>
+                                    <h5 class="price">{{ $product->price }} <span>{{ $product->price }}</span></h5>
+                                    <p>{{ $product->description }}</p>
+                                    <a href="#">Посмотреть подробней</a>
                                 </div>
                                 <!-- Add to Cart Form -->
                                 <form class="cart" method="post">
@@ -38,7 +39,7 @@
 
                                         <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                     </div>
-                                    <button type="submit" name="addtocart" value="5" class="cart-submit">Add to cart</button>
+                                    <button type="submit" name="addtocart" value="5" class="cart-submit">Купить</button>
                                     <!-- Wishlist -->
                                     <div class="modal_pro_wishlist">
                                         <a href="https://technext.github.io/karl/wishlist.html" target="_blank"><i class="ti-heart"></i></a>
@@ -50,7 +51,7 @@
                                 </form>
 
                                 <div class="share_wf mt-30">
-                                    <p>Share With Friend</p>
+                                    <p>Поделиться</p>
                                     <div class="_icon">
                                         <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                                         <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>

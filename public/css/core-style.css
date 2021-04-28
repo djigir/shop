@@ -1206,6 +1206,16 @@ img {
     color: #2a2a2a;
 }
 
+.add-to-cart-btn_product {
+    border: 1px solid #FF084E;
+    display: inline-block !important;
+}
+
+.add-to-cart-btn_product:hover {
+    color: white !important;
+    background-color: #FF084E;
+}
+
 /* -------------------
 :: 12.0 Offer Area CSS
 ------------------- */
@@ -1451,7 +1461,7 @@ img {
 ------------------------ */
 
 .breadcumb_area {
-    padding-top: 100px;
+    /*padding-top: 100px;*/
     padding-bottom: 40px;
 }
 

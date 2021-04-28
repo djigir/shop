@@ -4,7 +4,7 @@
 
     @include('layouts.partials.breadcrumb')
 
-    @include('index.quick-modal')
+    @include('index.quick-modal', ['product_id' => 9])
 
     <section class="shop_grid_area section_padding_10"> {{-- section_padding_100 --}}
         <div class="container">
@@ -99,8 +99,8 @@
                                 <!-- Product Image -->
                                 <div class="product-img">
                                     {{--<img src="img/product-img/product-5.jpg" alt="">--}}
-                                    <img src="{{ $product->img }}" alt="">
-                                    <div class="product-quicview">
+                                    <img src="{{ $product->img }}" alt="product-photo">
+                                    <div class="product-quicview" data-target="#quickview" data-toggle="modal" data-id="11">
                                         <a href="#" data-toggle="modal"
                                            data-target="#quickview"><i class="ti-plus"></i></a>
                                     </div>
@@ -110,7 +110,7 @@
                                     <h4 class="product-price">$39.90</h4>
                                     <p>{{ $product->title }}</p>
                                     <!-- Add to Cart -->
-                                    <a href="#" class="add-to-cart-btn">Купить</a>
+                                    <a href="#" class="add-to-cart-btn add-to-cart-btn_custom">Купить</a>
                                 </div>
                             </div>
                             @endforeach
