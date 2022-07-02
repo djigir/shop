@@ -7,12 +7,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Категории</h1>
+                    <h1 class="m-0">Цвета</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('main.index') }}">Главная</a></li>
-                        <li class="breadcrumb-item active">Категории</li>
+                        <li class="breadcrumb-item active">Цвета</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -27,16 +27,16 @@
             <div class="row">
 
                 <div class="col-2 mb-4">
-                    <a href="{{ route('category.create') }}" class="btn btn-block btn-primary">Создать</a>
+                    <a href="{{ route('color.create') }}" class="btn btn-block btn-primary">Создать</a>
                 </div>
 
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">
-                                @if($categories->count() > 0)
-                                    Всего категорий: <b>{{ $categories->total() }} </b> | Показано:
-                                    <b>{{ $categories->lastItem() }}</b> из <b>{{ $categories->total() }}</b>
+                                @if($colors->count() > 0)
+                                    Всего цветов: <b>{{ $colors->total() }} </b> | Показано:
+                                    <b>{{ $colors->lastItem() }}</b> из <b>{{ $colors->total() }}</b>
                                 @endif
                             </h3>
                             <div class="card-tools">
@@ -61,33 +61,30 @@
                                 <tr class="text-center">
                                     <th>№</th>
                                     <th>Название</th>
-                                    <th>Картинка</th>
-                                    <th>Дата создания</th>
+                                    <th>Цвет</th>
                                     <th colspan="3">Действия</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($categories as $index => $category)
+                                @foreach($colors as $index => $color)
                                     <tr class="text-center">
                                         <td>{{ $index+1 }}</td>
-                                        <td><a href="{{ route('category.show', $category->id) }}">{{ $category->title }}</a></td>
+                                        <td><a href="{{ route('color.show', $color->id) }}">{{ $color->title }}</a></td>
                                         <td>
-                                            <img src="{{ asset('storage/' . $category->image) }}" alt="category-image"
-                                                 style="width: 155px">
+                                            <div style="width: 16px; height: 16px; background-color: {{ '#' . $color->title }}; display: inline-block;"></div>
                                         </td>
-                                        <td>{{ $category->created_at }}</td>
                                         <td>
-                                            <a href="{{ route('category.show', $category->id) }}">
+                                            <a href="{{ route('color.show', $color->id) }}">
                                                 <i class="fas fa-eye"></i>
                                             </a>
                                         </td>
                                         <td>
-                                            <a style="color: #ebba34" href="{{ route('category.edit', $category->id) }}">
+                                            <a style="color: #ebba34" href="{{ route('color.edit', $color->id) }}">
                                                 <i class="fas fa-pen"></i>
                                             </a>
                                         </td>
                                         <td>
-                                            <form action="{{ route('category.delete', $category->id) }}"
+                                            <form action="{{ route('color.delete', $color->id) }}"
                                                   method="POST">
                                                 @csrf
                                                 @method('DELETE')
