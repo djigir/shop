@@ -69,9 +69,9 @@
                                 @foreach($colors as $index => $color)
                                     <tr class="text-center">
                                         <td>{{ $index+1 }}</td>
-                                        <td><a href="{{ route('color.show', $color->id) }}">{{ $color->title }}</a></td>
+                                        <td><a href="{{ route('color.show', $color->id) }}">{{ $color->color_code }}</a></td>
                                         <td>
-                                            <div style="width: 16px; height: 16px; background-color: {{ '#' . $color->title }}; display: inline-block;"></div>
+                                            <div style="width: 16px; height: 16px; background-color: {{ $color->color_code }}; display: inline-block;"></div>
                                         </td>
                                         <td>
                                             <a href="{{ route('color.show', $color->id) }}">

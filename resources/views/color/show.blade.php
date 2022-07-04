@@ -7,13 +7,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Цвет: {{ $color->title }}</h1>
+                    <h1 class="m-0">Цвет: {{ $color->color_code }} <div style="width: 22px; height: 22px; background-color: {{ $color->color_code }}; display: inline-block;"></div></h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('main.index') }}">Главная</a></li>
                         <li class="breadcrumb-item"><a href="{{ route('color.index') }}">Цвета</a></li>
-                        <li class="breadcrumb-item active">{{ $color->title }}</li>
+                        <li class="breadcrumb-item active">{{ $color->color_code }}</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -49,12 +49,12 @@
                                 </tr>
                                 <tr class="text-center">
                                     <td>Название</td>
-                                    <td>{{ $color->title }}</td>
+                                    <td>{{ $color->color_code }}</td>
                                 </tr>
                                 <tr class="text-center">
                                     <td>Цвет</td>
                                     <td>
-                                        <div style="width: 16px; height: 16px; background-color: {{ '#' . $color->title }}; display: inline-block;"></div>
+                                        <div style="width: 16px; height: 16px; background-color: {{ $color->color_code }}; display: inline-block;"></div>
                                     </td>
                                 </tr>
                                 </tbody>

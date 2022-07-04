@@ -32,11 +32,17 @@
                         @csrf
                         @method('PATCH')
                         <div class="form-group">
-                            <label for="title">Название цвета</label>
-                            <input type="text" id="title" class="form-control" name="title" value="{{ $color->title }}" placeholder="Название категории">
-                            @error('title')
-                            <div class="text-danger">{{ $message }}</div>
-                            @enderror
+                            <label>Выберите цвет</label>
+                            <div class="input-group my-colorpicker2 colorpicker-element" data-colorpicker-id="2">
+                                <input type="text" name="color_code" class="form-control" data-original-title="" title="" aria-describedby="" value="{{ $color->color_code }}" autocomplete="off">
+
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-square" style="color: {{ $color->color_code }}"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- /.input group -->
                         </div>
 
                         <input type="submit" class="btn btn-warning" value="Обновить">

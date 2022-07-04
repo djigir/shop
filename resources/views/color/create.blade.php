@@ -30,11 +30,14 @@
                     <form action="{{ route('color.store') }}" method="POST" class="w-25">
                         @csrf
                         <div class="form-group">
-                            <label for="title">Название цвета</label>
-                            <input type="text" class="form-control" name="title" placeholder="Название цвета">
-                            @error('title')
-                            <div class="text-danger">{{ $message }}</div>
-                            @enderror
+                            <label>Выберите цвет</label>
+                            <div class="input-group my-colorpicker2 colorpicker-element" data-colorpicker-id="2">
+                                <input type="text" name="color_code" class="form-control colorpicker-inp" data-original-title="" title="" aria-describedby="" autocomplete="off">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-square color_style"></i></span>
+                                </div>
+                            </div>
+                            <!-- /.input group -->
                         </div>
 
                         <input type="submit" class="btn btn-success" value="Создать">
@@ -49,3 +52,4 @@
     <!-- /.content -->
 
 @endsection
+
