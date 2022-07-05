@@ -7,13 +7,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Категория: {{ $category->title }}</h1>
+                    <h1 class="m-0">Категория: {{ $product->title }}</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('main.index') }}">Главная</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('category.index') }}">Категории</a></li>
-                        <li class="breadcrumb-item active">{{ $category->title }}</li>
+                        <li class="breadcrumb-item"><a href="{{ route('product.index') }}">Категории</a></li>
+                        <li class="breadcrumb-item active">{{ $product->title }}</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -27,11 +27,11 @@
             <!-- Small boxes (Stat box) -->
             <div class="row">
                 <div class="col-2 mb-4">
-                    <a href="{{ route('category.edit', $category->id) }}" class="btn btn-block btn-warning">Редактировать</a>
+                    <a href="{{ route('product.edit', $product->id) }}" class="btn btn-block btn-warning">Редактировать</a>
                 </div>
 
                 <div class="col-2 mb-4">
-                    <form action="{{ route('category.delete', $category->id) }}" method="POST">
+                    <form action="{{ route('product.delete', $product->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-block btn-danger">Удалить</button>
@@ -45,21 +45,21 @@
                                 <tbody>
                                 <tr class="text-center">
                                     <td>ID</td>
-                                    <td>{{ $category->id }}</td>
+                                    <td>{{ $product->id }}</td>
                                 </tr>
                                 <tr class="text-center">
                                     <td>Название</td>
-                                    <td>{{ $category->title }}</td>
+                                    <td>{{ $product->title }}</td>
                                 </tr>
                                 <tr class="text-center">
                                     <td>Изображение</td>
                                     <td>
-                                        <img src="{{ asset('storage/' . $category->image) }}" alt="category-image" class="w-50" >
+                                        <img src="{{ asset('storage/' . $product->image) }}" alt="product-image" class="w-50" >
                                     </td>
                                 </tr>
                                 <tr class="text-center">
                                     <td>Дата создания</td>
-                                    <td>{{ $category->created_at }}</td>
+                                    <td>{{ $product->created_at }}</td>
                                 </tr>
                                 </tbody>
                             </table>

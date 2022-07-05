@@ -61,7 +61,6 @@
                                 <tr class="text-center">
                                     <th>№</th>
                                     <th>Название</th>
-                                    <th>Картинка</th>
                                     <th>Дата создания</th>
                                     <th colspan="3">Действия</th>
                                 </tr>
@@ -71,10 +70,6 @@
                                     <tr class="text-center">
                                         <td>{{ $index+1 }}</td>
                                         <td><a href="{{ route('category.show', $category->id) }}">{{ $category->title }}</a></td>
-                                        <td>
-                                            <img src="{{ asset('storage/' . $category->image) }}" alt="category-image"
-                                                 style="width: 155px">
-                                        </td>
                                         <td>{{ $category->created_at }}</td>
                                         <td>
                                             <a href="{{ route('category.show', $category->id) }}">

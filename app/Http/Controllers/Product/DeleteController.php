@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\Product;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
+use App\Models\Product;
 
 class DeleteController extends Controller
 {
-    public function __invoke(User $user)
+    public function __invoke(Product $product)
     {
-        $user->delete();
-        return redirect()->route('user.index');
+        $product->delete();
+        return redirect()->route('product.index');
     }
 }

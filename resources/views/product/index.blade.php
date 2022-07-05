@@ -61,6 +61,12 @@
                                 <tr class="text-center">
                                     <th>№</th>
                                     <th>Название</th>
+                                    <th>Описание</th>
+                                    <th>Контент</th>
+                                    <th>Цена</th>
+                                    <th>Количество</th>
+                                    <th>Опубликовано</th>
+                                    <th>Категория</th>
                                     <th>Картинка</th>
                                     <th>Дата создания</th>
                                     <th colspan="3">Действия</th>
@@ -71,11 +77,28 @@
                                     <tr class="text-center">
                                         <td>{{ $index+1 }}</td>
                                         <td><a href="{{ route('product.show', $product->id) }}">{{ $product->title }}</a></td>
-                                        <td>
-                                            <img src="{{ asset('storage/' . $product->image) }}" alt="product-image"
-                                                 style="width: 155px">
+                                        <td>{{ $product->description }}</td>
+                                        <td>{{ $product->content }}</td>
+                                        <td>{{ $product->price }}</td>
+                                        <td>{{ $product->count }}</td>
+
+                                        <td class="{{ $product->is_published == 1 ? 'text-success' : 'text-danger' }}">
+                                            {{ $product->is_published == 1 ? 'Да' : 'Нет' }}
                                         </td>
-                                        <td>{{ $product->created_at }}</td>
+
+                                        <td>
+                                            <a href="{{ route('category.show', $product->category->id) }}">{{ $product->category->title }}</a>
+                                        </td>
+                                        <td>
+                                            <img src="{{ asset('storage/' . $product->preview_image) }}" alt="product-image"
+                                                 style="width: 115px">
+                                        </td>
+                                        <td>
+                                            {{ \Carbon\Carbon::parse($product->created_at)->day }}
+                                            {{ \Illuminate\Support\Str::ucfirst(\Carbon\Carbon::parse($product->created_at)->translatedFormat('F')) }}
+                                            {{ \Carbon\Carbon::parse($product->created_at)->year }}
+                                            {{ \Carbon\Carbon::parse($product->created_at)->format('H:i') }}
+                                        </td>
                                         <td>
                                             <a href="{{ route('product.show', $product->id) }}">
                                                 <i class="fas fa-eye"></i>

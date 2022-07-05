@@ -90,10 +90,6 @@
                                         <td>
                                             {{ $user->address }}
                                         </td>
-{{--                                        <td>--}}
-{{--                                            <img src="{{ asset('storage/' . $user->image) }}" alt="user-image"--}}
-{{--                                                 style="width: 155px">--}}
-{{--                                        </td>--}}
                                         <td>{{ $user->created_at }}</td>
                                         <td>
                                             <a href="{{ route('user.show', $user->id) }}">

@@ -39,25 +39,6 @@
                             @enderror
                         </div>
 
-                        <div class="form-group">
-                            <label for="exampleInputFile">Изображение категории</label>
-                            <div class="mb-3">
-                                <img src="{{ asset('storage/' . $category->image) }}" alt="image" class="w-100">
-                            </div>
-                            <div class="input-group">
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" name="image">
-                                    <label class="custom-file-label" >Выбрать изображение</label>
-                                </div>
-                                <div class="input-group-append">
-                                    <span class="input-group-text">Загрузить</span>
-                                </div>
-                            </div>
-                            @error('image')
-                            <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-
                         <input type="submit" class="btn btn-warning" value="Обновить">
                     </form>
                 </div>

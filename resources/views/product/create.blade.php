@@ -27,12 +27,11 @@
             <div class="row">
 
                 <div class="col-12">
-                    <form action="{{ route('product.store') }}" method="POST" class="w-50"
-                          enctype="multipart/form-data">
+                    <form action="{{ route('product.store') }}" method="POST" class="w-50" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label for="title">Название категории</label>
-                            <input type="text" id="title" class="form-control" name="title" placeholder="Название категории">
+                            <label for="title">Название товара</label>
+                            <input type="text" id="title" class="form-control" name="title" placeholder="Название товара">
                             @error('title')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
@@ -70,6 +69,71 @@
                             @enderror
                         </div>
 
+                        <div class="form-group">
+                            <label for="exampleInputFile">Изображение</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input name="preview_image" type="file" class="custom-file-input" id="exampleInputFile">
+                                    <label class="custom-file-label" for="exampleInputFile">Выберите файл</label>
+                                </div>
+                                <div class="input-group-append">
+                                    <span class="input-group-text">Загрузить</span>
+                                </div>
+                            </div>
+                            @error('preview_image')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label>Категория</label>
+                            <select name="category_id" class="form-control select2" style="width: 100%;">
+                                <option selected="selected" disabled>Виберите категорию</option>
+                                @foreach($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->title }}</option>
+                                @endforeach
+                            </select>
+                            @error('category_id')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label>Тэги</label>
+                            <select name="tags[]" class="tags" multiple="multiple" data-placeholder="Выберите тэги" style="width: 100%;">
+                                @foreach($tags as $tag)
+                                    <option value="{{ $tag->id }}">{{ $tag->title }}</option>
+                                @endforeach
+                            </select>
+                            @error('tags')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label>Цвет</label>
+                            <select name="colors[]" class="colors" id="colorList" multiple="multiple" data-placeholder="Выберите цвета" style="width: 100%;">
+                                @foreach($colors as $color)
+                                    <option value="{{ $color->id }}">{{ $color->color_code }}</option>
+                                @endforeach
+                            </select>
+                            @error('colors')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label>Опубликовать</label>
+                            <select name="is_published" class="form-control select2" style="width: 100%;">
+                                <option selected="selected" disabled>Выберите вариант</option>
+                                <option value="1">Да</option>
+                                <option value="0">Нет</option>
+                            </select>
+                            @error('is_published')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
                         <input type="submit" class="btn btn-success" value="Создать">
                     </form>
                 </div>
@@ -80,5 +144,4 @@
         </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
-
 @endsection

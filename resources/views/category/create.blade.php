@@ -37,22 +37,6 @@
                             @enderror
                         </div>
 
-                        <div class="form-group">
-                            <label for="exampleInputFile">Добавить изображение</label>
-                            <div class="input-group">
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" name="image">
-                                    <label class="custom-file-label" >Выбрать изображение</label>
-                                </div>
-                                <div class="input-group-append">
-                                    <span class="input-group-text">Загрузить</span>
-                                </div>
-                            </div>
-                            @error('image')
-                            <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-
                         <input type="submit" class="btn btn-success" value="Создать">
                     </form>
                 </div>

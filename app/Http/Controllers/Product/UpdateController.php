@@ -3,16 +3,16 @@
 namespace App\Http\Controllers\Product;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\User\UpdateRequest;
-use App\Models\User;
+use App\Http\Requests\Product\UpdateRequest;
+use App\Models\Product;
 
 class UpdateController extends Controller
 {
-    public function __invoke(UpdateRequest $request, User $user)
+    public function __invoke(UpdateRequest $request, Product $product)
     {
         $data = $request->validated();
-        $user->update($data);
+        $product->update($data);
 
-        return view('user.show', compact('user'));
+        return view('product.show', compact('product'));
     }
 }

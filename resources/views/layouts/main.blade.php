@@ -6,8 +6,9 @@
     <title>AdminLTE 3 | Dashboard</title>
 
     <!-- Google Font: Source Sans Pro -->
-{{--    <link rel="stylesheet" href="{{ asset('adminlte/https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback') }}">--}}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{ asset('adminlte/plugins/select2/css/select2.min.css') }}">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/fontawesome-free/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css') }}">
@@ -235,10 +236,31 @@
 <script src="{{ asset('adminlte/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('adminlte/dist/js/adminlte.js') }}"></script>
+<!-- Select2 -->
+<script src="{{ asset('adminlte/plugins/select2/js/select2.full.min.js') }}"></script>
 </body>
 </html>
+
+
 <script>
     $(function () {
+        $('.tags').select2()
+        $('.colors').select2({
+            templateResult: function (data, container) {
+                if (data.element) {
+                    $(container).css({"background-color":data.text});
+                }
+                return data.text;
+            },
+            templateSelection: function(option, container) {
+                $(container).css({
+                    "background-color":option.text,
+                    "border-color": 'white',
+                });
+                return $('<span class="' + ($(option.element).prop('class') || '') + '">' +
+                    '' + option.text + '</span>');
+            },
+        })
         //color picker with addon
         $('.my-colorpicker2').colorpicker()
 
@@ -250,9 +272,3 @@
         })
     })
 </script>
-<script>
-    $(".input-group-append").change(function () {
-        console.log($(".input-group-append").css("color"))
-    })
-</script>
-
