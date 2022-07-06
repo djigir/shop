@@ -25,15 +25,17 @@ class StoreRequest extends FormRequest
     {
         return [
             'title' => 'required|string',
-            'description' => 'required',
-            'content' => 'required',
-            'preview_image' => 'required',
-            'price' => 'required',
-            'count' => 'required',
+            'description' => 'required|string',
+            'content' => 'required|string',
+            'preview_image' => 'required|file',
+            'price' => 'required|integer',
+            'count' => 'required|integer',
             'is_published' => 'nullable|integer',
-            'category_id' => 'nullable',
+            'category_id' => 'required|integer|exists:categories,id',
             'tags' => 'nullable|array',
+            'tags.*' => 'nullable|integer|required|exists:tags,id',
             'colors' => 'nullable|array',
+            'colors.*' => 'nullable|integer|required|exists:colors,id',
         ];
     }
 }

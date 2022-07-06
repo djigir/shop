@@ -28,7 +28,11 @@
 
                 <div class="col-2 mb-4">
                     <a href="{{ route('product.create') }}" class="btn btn-block btn-primary">Создать</a>
+                    <form action="{{ route('product.index') }}" method="GET">
+                        <button type="submit" name="sort" value="id">ПО ID</button>
+                    </form>
                 </div>
+
 
                 <div class="col-12">
                     <div class="card">
@@ -124,8 +128,9 @@
                                 </tbody>
                             </table>
                         </div>
-
                     </div>
+
+                    @include('components.pagination', ['items' => $products])
 
                 </div>
 

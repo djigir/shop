@@ -30,7 +30,6 @@ class UpdateRequest extends FormRequest
             'age' => 'nullable|integer',
             'address' => 'nullable|string',
             'gender' => 'nullable|integer',
-            'user_photo' => 'nullable|file',
         ];
     }
 }
