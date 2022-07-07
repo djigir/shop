@@ -57,7 +57,7 @@
                                 </tr>
                                 <tr class="text-center">
                                     <td>Контент</td>
-                                    <td>{{ $product->content }}</td>
+                                    <td class="text-wrap">{{ $product->content }}</td>
                                 </tr>
                                 <tr class="text-center">
                                     <td>Цена</td>

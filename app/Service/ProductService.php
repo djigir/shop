@@ -4,6 +4,7 @@
 namespace App\Service;
 
 use App\Models\Product;
+use http\Env\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
@@ -90,5 +91,26 @@ class ProductService
             abort(500);
         }
         return $product;
+    }
+
+    public function sorting($request, $productsQuery)
+    {
+        if ($request->filled('sort_column')) {
+            $productsQuery->orderBy($request->get('sort_column'), $request->get('sort_direction'));
+        }
+
+        if (!$request->filled('sort_column')) {
+            $productsQuery->orderByDesc('id');
+        }
+
+        return $products = $productsQuery->paginate(10);
+    }
+
+    public function search($query, $productsQuery)
+    {
+        return $productsQuery->where('title','LIKE','%'.$query.'%')
+            ->orWhere('description','LIKE','%'.$query.'%')
+            ->orWhere('content','LIKE','%'.$query.'%')
+            ->paginate(10);
     }
 }

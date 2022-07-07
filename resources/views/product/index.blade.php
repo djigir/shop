@@ -28,8 +28,23 @@
 
                 <div class="col-2 mb-4">
                     <a href="{{ route('product.create') }}" class="btn btn-block btn-primary">Создать</a>
-                    <form action="{{ route('product.index') }}" method="GET">
-                        <button type="submit" name="sort" value="id">ПО ID</button>
+                </div>
+
+                <div class="sorting col-12">
+                    <form action="{{ route('product.index') }}" method="GET" class="float-right form-inline mb-3">
+                        <select name="sort_column" id="sorting" class="custom-select ml-2">
+                            <option  selected {{ request()->get('sort_column') == 'created_at' ? 'selected' : '' }} value="id">ID</option>
+                            <option {{ request()->get('sort_column') == 'created_at' ? 'selected' : '' }} value="created_at">По дате</option>
+                            <option {{ request()->get('sort_column') == 'is_published' ? 'selected' : '' }} value="is_published">По опубликованым</option>
+                        </select>
+                            <select name="sort_direction" class="custom-select ml-3">
+                                <option {{ request()->get('sort_direction') == 'desc' ? 'selected' : '' }} value="desc">По убыванию</option>
+                                <option {{ request()->get('sort_direction') == 'asc' ? 'selected' : '' }} value="asc">По возростанию</option>
+                            </select>
+                        <div class="sorting-btn ml-3">
+                            <input type="submit" class="btn btn-info" value="Сортировать">
+                            <a href="{{ route('product.index') }}" class="btn btn-dark">Сбросить</a>
+                        </div>
                     </form>
                 </div>
 
@@ -44,11 +59,10 @@
                                 @endif
                             </h3>
                             <div class="card-tools">
-                                <form action="#">
+                                <form action="{{ route('product.index') }}">
                                     <div class="input-group input-group-sm" style="width: 150px;">
-                                        <input type="text" name="query" class="form-control float-right"
-                                               placeholder="Поиск">
-
+                                        <input type="text" name="search_query" class="form-control float-right" placeholder="Поиск"
+                                               value="{{ !is_null(request()->get('search_query')) ? request()->get('search_query') : '' }}">
                                         <div class="input-group-append">
                                             <button type="submit" class="btn btn-default">
                                                 <i class="fas fa-search"></i>
@@ -79,10 +93,10 @@
                                 <tbody>
                                 @foreach($products as $index => $product)
                                     <tr class="text-center">
-                                        <td>{{ $index+1 }}</td>
+                                        <td>{{ $product->id }}</td>
                                         <td><a href="{{ route('product.show', $product->id) }}">{{ $product->title }}</a></td>
                                         <td>{{ $product->description }}</td>
-                                        <td>{{ $product->content }}</td>
+                                        <td class="text-wrap" style="min-width: 220px;">{{ $product->content }}</td>
                                         <td>{{ $product->price }}</td>
                                         <td>{{ $product->count }}</td>
 
@@ -95,7 +109,7 @@
                                         </td>
                                         <td>
                                             <img src="{{ asset('storage/' . $product->preview_image) }}" alt="product-image"
-                                                 style="width: 115px">
+                                                 style="width: 100px; height: 65px">
                                         </td>
                                         <td>
                                             {{ \Carbon\Carbon::parse($product->created_at)->day }}
@@ -141,5 +155,6 @@
     <!-- /.content -->
 
 @endsection
+<script>
 
-
+</script>
