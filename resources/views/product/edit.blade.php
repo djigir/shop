@@ -90,6 +90,26 @@
                             @enderror
                         </div>
 
+                        @foreach($product->productImages as $productImage)
+
+                            <div class="form-group">
+                                <div class="w-75 mb-3">
+                                    <img src="{{ asset('storage/' . $productImage->file_path) }}" alt="preview_image" class="w-50">
+                                </div>
+                                <label for="exampleInputFile">Изображение</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input name="preview_image" type="file" class="custom-file-input" id="exampleInputFile">
+                                        <label class="custom-file-label" for="exampleInputFile">Выберите файл</label>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">Загрузить</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        @endforeach
+
                         <div class="form-group">
                             <label>Категория</label>
                             <select name="category_id" class="form-control select2" style="width: 100%;">
@@ -103,6 +123,18 @@
                             @error('category_id')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label>Группа</label>
+                            <select name="group_id" class="form-control select2" style="width: 100%;">
+                                <option selected="selected" disabled>Виберите группу</option>
+                                @foreach($groups as $group)
+                                    <option value="{{ $group->id }}"
+                                        {{ $group->id == $product->group_id ? 'selected' : '' }}
+                                    >{{ $group->title }}</option>
+                                @endforeach
+                            </select>
                         </div>
 
                         <div class="form-group">

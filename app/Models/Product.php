@@ -12,6 +12,12 @@ class Product extends Model
     protected $table = 'products';
     protected $guarded = false;
 
+    /* Getters */
+    public function getImageUrlAttribute()
+    {
+        return url('storage/' . $this->preview_image);
+    }
+
     /* Relation */
     public function category()
     {
@@ -38,5 +44,10 @@ class Product extends Model
             'product_id',
             'color_id'
         );
+    }
+
+    public function productImages()
+    {
+        return $this->hasMany(ProductImage::class, 'product_id', 'id');
     }
 }

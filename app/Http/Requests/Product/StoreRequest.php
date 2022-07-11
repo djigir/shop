@@ -36,6 +36,8 @@ class StoreRequest extends FormRequest
             'tags.*' => 'nullable|integer|required|exists:tags,id',
             'colors' => 'nullable|array',
             'colors.*' => 'nullable|integer|required|exists:colors,id',
+            'product_images' => 'nullable|array',
+            'group_id' => 'nullable',
         ];
     }
 }
