@@ -27,6 +27,11 @@ class FilterListController extends Controller
                 'max' => $maxPrice,
                 'min' => $minPrice,
             ],
+
+            'sorting' => [
+                'max' => 'big',
+                'min' => 'small',
+            ],
         ];
 
         return response()->json($result);

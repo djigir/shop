@@ -14,6 +14,11 @@ class ProductFilter extends AbstractFilter
     const TAGS = 'tags';
 
 
+
+    const BIG = 'big';
+    const SMALL = 'small';
+
+
     protected function getCallback(): array
     {
         return [
@@ -21,6 +26,8 @@ class ProductFilter extends AbstractFilter
             self::COLORS => [$this, 'colors'],
             self::PRICES => [$this, 'prices'],
             self::TAGS => [$this, 'tags'],
+            self::BIG => [$this, 'big'],
+            self::SMALL => [$this, 'small'],
         ];
     }
 
@@ -46,5 +53,31 @@ class ProductFilter extends AbstractFilter
         $builder->whereHas('tags', function ($b) use ($value) {
             $b->whereIn('tag_id', $value);
         });
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    protected function big(Builder $builder, $value)
+    {
+        $builder->where('id', 3);
+    }
+
+    protected function small(Builder $builder, $value)
+    {
+        $builder->where('id', 4);
     }
 }
